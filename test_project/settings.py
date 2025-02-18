@@ -28,6 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
+CSFR_TRUSTED_ORIGINS=["pawprintrailway1-production.up.railway.app"]
 
 # Application definition
 
