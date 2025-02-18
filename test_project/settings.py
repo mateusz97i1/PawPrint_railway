@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-nvp6cw&4%%zstcr(4(f6un37$t0sbmi2*_m5wa^$p99t(1k1-3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -50,6 +50,7 @@ INTERNAL_IPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -129,6 +130,7 @@ STATIC_URL = 'static/'
 STATIC_DIRS=[(os.path.join(BASE_DIR,'static/'))]
 STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles','static')
 
+STATICSTORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
